@@ -3,13 +3,13 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_sizing_chart'
   s.version     = '3.0.0'
-  s.summary     = 'TODO: Add gem summary here'
+  s.summary     = 'sizing chart'
   s.description = 'TODO: Add (optional) gem description here'
   s.required_ruby_version = '>= 2.1.0'
 
-  # s.author    = 'You'
-  # s.email     = 'you@example.com'
-  # s.homepage  = 'http://www.spreecommerce.com'
+  s.author    = 'Philipe Dallaire'
+  s.email     = 'pdallaire@lawebshop.ca'
+  s.homepage  = ''
   s.license = 'BSD-3'
 
   # s.files       = `git ls-files`.split("\n")
