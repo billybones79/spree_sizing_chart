@@ -6,7 +6,7 @@ class AddSpreeSizingChart < ActiveRecord::Migration
     create_table :spree_sizing_charts do |t|
       t.integer :brand_id
       t.integer :taxon_id
-      t.text    :chart
+      t.text    :chart_table
       t.timestamps
     end
   end

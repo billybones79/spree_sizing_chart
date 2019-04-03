@@ -10,6 +10,7 @@ module Spree
 
       def load_data
         @taxons = Taxon.order(:name)
+        @template_charts = Spree::TemplateChart.all
       end
 
     end

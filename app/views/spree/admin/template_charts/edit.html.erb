@@ -1,0 +1,29 @@
+<%= render 'spree/admin/shared/sub_menu/product' %>
+
+<% content_for :page_title do %>
+    <%= Spree.t(:template_charts_edit) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <li>
+      <%= button_link_to Spree.t(:back_to_template_charts), spree.admin_template_charts_path, :icon => 'arrow-left' %>
+    </li>
+<% end %>
+
+
+
+<div id="ajax_error" class="errorExplanation" style="display:none;"></div>
+
+<%= form_for [:admin, @template_chart] do |f| %>
+
+    <%= render :partial => 'form', :locals => { :f => f } %>
+
+    <fieldset class="no-border-top">
+      <br>
+      <div class="filter-actions actions" data-hook="buttons">
+        <%= button Spree.t(:update), 'ok' %>
+      </div>
+    </fieldset>
+
+
+<% end %>

@@ -1,0 +1,36 @@
+<% content_for :page_title do %>
+    <%= Spree.t(:template_charts) %>
+<% end %>
+
+<% content_for :page_actions do %>
+    <span id="new_ot_link">
+      <%= button_link_to Spree.t(:new_template_chart), spree.new_admin_template_chart_path, { :icon => 'SS', :id => 'admin_new_template_chart', :class => 'btn-success' } %>
+    </span>
+<% end %>
+
+
+<% if @template_charts.any? %>
+
+    <table class="table sortable" id="listing-store-locations data-hook">
+      <tbody>
+      <% @template_charts.each do |store| %>
+          <tr id="<%= spree_dom_id store %>">
+            <td><%= Spree.t(:name) %> : </td>
+            <td><%= store.name %></td>
+            <td class="actions actions-2 text-right">
+              <%= link_to_edit(store.id, class: 'admin_edit_option_type', no_text: true) %>
+              <%= link_to_delete(store, no_text: true) %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+<% else %>
+    <div class="alert alert-info no-objects-found">
+      <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::TemplateChart)) %>,
+      <%= link_to Spree.t(:add_one), new_admin_template_chart_path %>!
+    </div>
+<% end %>
+
+
