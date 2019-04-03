@@ -13,6 +13,11 @@ module Spree
         @template_charts = Spree::TemplateChart.all
       end
 
+      protected
+
+      def permitted_resource_params
+        params.require(:sizing_chart).permit(:taxon_id, :brand_id, :chart_table)
+      end
     end
   end
 end
