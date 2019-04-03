@@ -8,7 +8,6 @@ module Spree
       protected
 
       def permitted_resource_params
-        byebug
         params.require(:template_chart).permit(:name, :chart_table)
       end
     end

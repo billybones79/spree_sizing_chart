@@ -69,5 +69,6 @@ $(document).ready(function () {
         CKEDITOR.instances.sizing_chart_chart_table.setData(backup);
         $("button#btn_backup").prop("disabled", true );
         $('select#template').val(null);
+        $('select#template').trigger('change');
     });
 });
