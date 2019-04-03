@@ -48,8 +48,8 @@ var set_taxon_select_from_parent = function(selector, parent){
 
 $(document).ready(function () {
 
-    set_taxon_select_from_parent('#sizing_chart_taxon_id', 1);
-    set_taxon_select_from_parent('#sizing_chart_brand_id', 2);
+    set_taxon_select_from_parent('#sizing_chart_taxon_id', <%= Rails.configuration.category_id%>);
+    set_taxon_select_from_parent('#sizing_chart_brand_id', <%= Rails.configuration.brand_id%>);
 
     //Permet de gérer le contenu du editor et de faire un backup du contenu si on selectionne un template pour revenir en arrière
     var backup;
