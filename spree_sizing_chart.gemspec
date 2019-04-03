@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = 'spree_sizing_chart'
   s.version     = '3.0.0'
   s.summary     = 'sizing chart'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.description = 'sizing chart'
   s.required_ruby_version = '>= 2.1.0'
 
   s.author    = 'Philipe Dallaire'
