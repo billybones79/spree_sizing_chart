@@ -25,7 +25,7 @@
             <td><%= store.taxon.try(:pretty_name) %></td>
             <td class="presentation"><%= store.brand ? store.brand.name : ""%></td>
             <td class="actions actions-2 text-right">
-              <%= link_to_edit(store.id, class: 'admin_edit_option_type', no_text: true) %>
+              <%= link_to_edit(store, class: 'admin_edit_option_type', no_text: true) %>
               <%= link_to_delete(store, no_text: true) %>
             </td>
           </tr>
