@@ -45,9 +45,9 @@
             <article class="content-entry">
               <h4 class="article-title"><%= t("products.sizes_chart") %><i></i></h4>
               <div class="accordion-content">
-                <% charts.each do |chart| %>
-                    <%= chart[:chart_table].html_safe%>
-                <%end%>
+
+                <%= charts[:chart_table].html_safe%>
+
               </div>
               <!--/.accordion-content-->
             </article>
