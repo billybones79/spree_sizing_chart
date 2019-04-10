@@ -4,7 +4,9 @@ Spree::BaseHelper.class_eval do
     taxons = product.taxons.where(taxonomy_id: Rails.configuration.category_id).map(&:self_and_ancestors).flatten.uniq
 
     chart = Spree::SizingChart.where("taxon_id IN (?) AND brand_id IN (?)", taxons, brand).joins(:taxon).order("spree_taxons.lft")
-    chart ||= Spree::SizingChart.where("taxon_id IN (?) AND brand_id = (?)", taxons, Rails.configuration.brand_id).joins(:taxon).order("spree_taxons.lft")
+    if chart.empty?
+      chart = Spree::SizingChart.where("taxon_id IN (?) AND brand_id = (?)", taxons, Rails.configuration.brand_id).joins(:taxon).order("spree_taxons.lft")
+    end
     return nil if chart.empty?
 
     chart.last
