@@ -23,7 +23,7 @@
           <%= f.label :brand_id, Spree.t(:brand) %>
 
           <% if can? :modify, Spree::Classification %>
-              <%= f.hidden_field :brand_id, value: @sizing_chart.brand_id %>
+              <%= f.hidden_field :brand_id, value: Spree::Taxon.exist?(@sizing_chart.brand_id) ? @sizing_chart.brand_id : nil %>
           <% elsif @sizing_chart.brand.any? %>
               <ul class="text_list">
                 <%= "<li>#{@sizing_chart.brand.name}</li>" %>

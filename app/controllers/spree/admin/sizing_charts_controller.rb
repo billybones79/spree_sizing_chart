@@ -12,7 +12,8 @@ module Spree
         @taxons = Taxon.order(:name)
         @template_charts = Spree::TemplateChart.all
       end
-      
+
+
     end
   end
 end
