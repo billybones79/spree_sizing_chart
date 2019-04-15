@@ -6,7 +6,7 @@
           <%= f.label :taxon_id, Spree.t(:taxon) %>
 
           <% if can? :modify, Spree::Classification %>
-              <%= f.hidden_field :taxon_id, value: @sizing_chart.taxon_id %>
+              <%= f.hidden_field :taxon_id, value: Spree::Taxon.exist?(@sizing_chart.taxon_id) ? @sizing_chart.taxon_id : nil %>
           <% elsif @sizing_chart.taxon.any? %>
               <ul class="text_list">
                 <%= "<li>#{@sizing_chart.taxon.name}</li>" %>
